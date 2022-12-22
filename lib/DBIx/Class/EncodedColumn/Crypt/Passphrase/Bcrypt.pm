@@ -62,7 +62,7 @@ __END__;
 
 =head1 SYNOPSIS
 
-  # Crypt::Passphrase::Bcrypt / cost of 6 / generate check method:
+  # In your database class:
 
   __PACKAGE__->add_columns(
     password => {
