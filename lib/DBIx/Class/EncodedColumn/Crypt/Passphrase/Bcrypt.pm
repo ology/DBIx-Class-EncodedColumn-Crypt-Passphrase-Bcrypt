@@ -107,6 +107,6 @@ used for password authentication.
 
 L<Crypt::Passphrase>
 
-L<DBIx::Class::EncodedColumn>,
+L<DBIx::Class::EncodedColumn>
 
 =cut
