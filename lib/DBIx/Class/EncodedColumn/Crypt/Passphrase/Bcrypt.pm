@@ -110,6 +110,8 @@ used for password authentication.
 
 =head1 SEE ALSO
 
+The F<t/01-methods.t> file
+
 L<Crypt::Passphrase>
 
 L<DBIx::Class::EncodedColumn>
