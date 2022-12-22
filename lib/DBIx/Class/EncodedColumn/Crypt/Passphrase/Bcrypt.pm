@@ -76,6 +76,7 @@ __END__;
 
   # In your program:
 
+  my ($c, $user, $pass) = @_;
   my $result = $c->schema->resultset('Account')->search({ name => $user })->first;
   return 1 if $result && $result->check_password($pass);
 
