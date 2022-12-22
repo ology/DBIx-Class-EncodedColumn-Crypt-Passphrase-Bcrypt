@@ -67,6 +67,11 @@ __END__;
       encode_check_method => 'check_password',
   });
 
+  # In your program:
+
+  my $result = $c->schema->resultset('Account')->search({ name => $user })->first;
+  return 1 if $result && $result->check_password($pass);
+
 =head1 DESCRIPTION
 
 Use L<Crypt::Passphrase::Bcrypt> for an encoded password column.
