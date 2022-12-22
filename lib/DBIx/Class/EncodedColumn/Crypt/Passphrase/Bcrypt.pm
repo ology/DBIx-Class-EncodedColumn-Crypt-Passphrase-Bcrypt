@@ -53,7 +53,7 @@ sub make_check_sub {
 
 __END__;
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
   # Crypt::Passphrase::Bcrypt / cost of 6 / generate check method
   __PACKAGE__->add_columns(
@@ -81,12 +81,12 @@ hash function. Defaults to C<8>.
 
 =head2 make_encode_sub $column_name, \%encode_args
 
-Returns a coderef that accepts a plaintext value and returns an encoded value
+Returns a coderef that accepts a plain text value and returns an encoded value
 
 =head2 make_check_sub $column_name, \%encode_args
 
-Returns a coderef that when given the row object and a plaintext value will
-return a boolean if the plaintext matches the encoded value. This is typically
+Returns a coderef that when given the row object and a plain text value will
+return a boolean if the plain text matches the encoded value. This is typically
 used for password authentication.
 
 =head1 SEE ALSO
