@@ -97,14 +97,14 @@ hash function. Defaults to C<8>.
 
   my $result = $c->schema->resultset('Account')->create({ user => $user, password => $pass });
 
-Returns a coderef that accepts a plain text value and returns an encoded value.
-This routine is used internally, to encrypt the given plain text password.
+Return a coderef that accepts a plain text value and returns an encoded value.
+This routine is used internally, to encrypt a given plain text password.
 
 =head2 make_check_sub
 
   $result->check_password($pass);
 
-Returns a coderef that when given the row object and a plain text value will
+Return a coderef that, when given a resultset object and a plain text value, will
 return a boolean if the plain text matches the encoded value. This is typically
 used for password authentication.
 
