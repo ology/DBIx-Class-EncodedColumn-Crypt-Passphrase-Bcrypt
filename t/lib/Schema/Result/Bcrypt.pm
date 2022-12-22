@@ -6,7 +6,7 @@ use warnings;
 
 use base 'DBIx::Class::Core';
 
-__PACKAGE__->load_components(qw/EncodedColumn Core/);
+__PACKAGE__->load_components(qw(EncodedColumn Core));
 __PACKAGE__->table('bcrypt');
 __PACKAGE__->add_columns(
   id => {
