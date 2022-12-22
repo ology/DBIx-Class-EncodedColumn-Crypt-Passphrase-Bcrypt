@@ -1,6 +1,6 @@
 package # hide from PAUSE
     Schema::Result::Bcrypt;
- 
+
 use strict;
 use warnings;
 
