@@ -55,7 +55,8 @@ __END__;
 
 =head1 SYNOPSIS
 
-  # Crypt::Passphrase::Bcrypt / cost of 6 / generate check method
+  # Crypt::Passphrase::Bcrypt / cost of 6 / generate check method:
+
   __PACKAGE__->add_columns(
     password => {
       data_type           => 'CHAR',
@@ -63,7 +64,7 @@ __END__;
       encode_column       => 1,
       encode_class        => 'Crypt::Passphrase::Bcrypt',
       encode_args         => { cost => 6 },
-      encode_check_method => 'verify_password',
+      encode_check_method => 'check_password',
   });
 
 =head1 DESCRIPTION
