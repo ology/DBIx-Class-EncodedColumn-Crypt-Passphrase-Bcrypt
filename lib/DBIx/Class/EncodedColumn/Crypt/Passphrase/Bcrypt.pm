@@ -85,7 +85,7 @@ Use L<Crypt::Passphrase::Bcrypt> for an encoded password column.
 
 =head1 ENCODE ARGUMENTS
 
-=head2 cost => \d\d?
+=head2 cost
 
 A single or double digit non-negative integer representing the cost of the
 hash function. Defaults to C<8>.
