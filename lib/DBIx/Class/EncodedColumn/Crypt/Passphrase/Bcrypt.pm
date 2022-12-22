@@ -8,7 +8,7 @@ use warnings;
 our $VERSION = '0.0104';
 
 use Encode qw(encode_utf8);
-use Crypt::Passphrase::Bcrypt;
+use Crypt::Passphrase::Bcrypt ();
 
 sub make_encode_sub {
   my($class, $col, $args) = @_;
