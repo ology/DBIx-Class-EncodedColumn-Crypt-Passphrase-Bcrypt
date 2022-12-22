@@ -93,13 +93,14 @@ hash function. Defaults to C<8>.
 
 =head1 METHODS
 
-=head2 make_encode_sub $column_name, \%encode_args
+=head2 make_encode_sub
 
   my $result = $c->schema->resultset('Account')->create({ user => $user, password => $pass });
 
-Returns a coderef that accepts a plain text value and returns an encoded value
+Returns a coderef that accepts a plain text value and returns an encoded value.
+This routine is used internally, to encrypt the given plain text password.
 
-=head2 make_check_sub $column_name, \%encode_args
+=head2 make_check_sub
 
   $result->check_password($pass);
 
