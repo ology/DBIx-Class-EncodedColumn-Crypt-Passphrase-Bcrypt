@@ -1,0 +1,5 @@
+Revision history for DBIx-Class-EncodedColumn-Crypt-Passphrase-Bcrypt
+
+{{$NEXT}}
+    - Mint with Dist::Zilla.
+    - Adapt the DBIx::Class::EncodedColumn::Crypt::Eksblowfish::Bcrypt code.
