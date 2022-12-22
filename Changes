@@ -1,6 +1,8 @@
 Revision history for DBIx-Class-EncodedColumn-Crypt-Passphrase-Bcrypt
 
 {{$NEXT}}
+
+0.0102 2022-12-21 20:56:32
     - Improve documentation.
     - Factor redundant cost code into a subroutine.
 
