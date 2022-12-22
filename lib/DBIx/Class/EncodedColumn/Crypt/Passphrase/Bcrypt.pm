@@ -7,6 +7,7 @@ use warnings;
 
 our $VERSION = '0.0100';
 
+use Encode qw(encode_utf8);
 use Crypt::Passphrase::Bcrypt;
 
 sub make_encode_sub {
@@ -44,7 +45,7 @@ sub make_check_sub {
   return sub {
     my $col_v = $_[0]->get_column($col);
     return unless defined $col_v;
-    return $passphrase->verify_password($_[1], $col_v);
+    return $passphrase->verify_password(encode_utf8($_[1]), $col_v);
   }
 }
 
