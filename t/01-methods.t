@@ -10,6 +10,7 @@ use Test::SQLite;
 use lib 't/lib';
 use Schema;
 
+use_ok 'Crypt::Passphrase::Bcrypt';
 use_ok 'DBIx::Class::EncodedColumn::Crypt::Passphrase::Bcrypt';
 
 my $sqlite = Test::SQLite->new;
