@@ -76,9 +76,11 @@ __END__;
 
   # In your program:
 
-  my ($c, $user, $pass) = @_;
-  my $result = $c->schema->resultset('Account')->search({ user => $user })->first;
-  return 1 if $result && $result->check_password($pass);
+  my ($self, $user, $pass) = @_;
+  my $result = $self->schema->resultset('Account')
+    ->search({ user => $user })->first;
+  return 1
+    if $result && $result->check_password($pass);
 
 =head1 DESCRIPTION
 
@@ -100,7 +102,7 @@ Default: C<8>
 Return a coderef that accepts a plain text value and returns an encoded value.
 This routine is used internally, to encrypt a given plain text password.
 
-  my $result = $c->schema->resultset('Account')
+  my $result = $self->schema->resultset('Account')
     ->create({ user => $user, password => $pass });
 
 =head2 make_check_sub
