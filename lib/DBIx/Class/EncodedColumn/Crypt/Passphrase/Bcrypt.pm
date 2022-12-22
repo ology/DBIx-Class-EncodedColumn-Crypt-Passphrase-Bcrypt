@@ -77,7 +77,7 @@ __END__;
   # In your program:
 
   my ($c, $user, $pass) = @_;
-  my $result = $c->schema->resultset('Account')->search({ name => $user })->first;
+  my $result = $c->schema->resultset('Account')->search({ user => $user })->first;
   return 1 if $result && $result->check_password($pass);
 
 =head1 DESCRIPTION
@@ -95,9 +95,13 @@ hash function. Defaults to C<8>.
 
 =head2 make_encode_sub $column_name, \%encode_args
 
+  my $result = $c->schema->resultset('Account')->create({ user => $user, password => $pass });
+
 Returns a coderef that accepts a plain text value and returns an encoded value
 
 =head2 make_check_sub $column_name, \%encode_args
+
+  $result->check_password($pass);
 
 Returns a coderef that when given the row object and a plain text value will
 return a boolean if the plain text matches the encoded value. This is typically
