@@ -13,10 +13,7 @@ use Crypt::Passphrase::Bcrypt;
 sub make_encode_sub {
   my($class, $col, $args) = @_;
 
-  my $cost = exists $args->{cost} ? $args->{cost} : 8;
-  die("Valid cost is a 1 or 2 digit integer. You used '${cost}'.")
-    unless $cost =~ /^\d\d?$/;
-  $cost = sprintf '%02i', 0 + $cost;
+  my $cost = _get_cost($args->{cost});
 
   my $passphrase = Crypt::Passphrase::Bcrypt->new(
     cost => $cost,
@@ -33,10 +30,7 @@ sub make_encode_sub {
 sub make_check_sub {
   my($class, $col, $args) = @_;
 
-  my $cost = exists $args->{cost} ? $args->{cost} : 8;
-  die("Valid cost is a 1 or 2 digit integer. You used '${cost}'.")
-    unless $cost =~ /^\d\d?$/;
-  $cost = sprintf '%02i', 0 + $cost;
+  my $cost = _get_cost($args->{cost});
 
   my $passphrase = Crypt::Passphrase::Bcrypt->new(
     cost => $cost,
@@ -47,6 +41,19 @@ sub make_check_sub {
     return unless defined $col_v;
     return $passphrase->verify_password(encode_utf8($_[1]), $col_v);
   }
+}
+
+sub _get_cost {
+  my ($cost) = @_;
+
+  $cost = defined $cost ? $cost : 8;
+
+  die("Valid cost is a 1 or 2 digit integer. You used '$cost'.")
+    unless $cost =~ /^\d\d?$/;
+
+  $cost = sprintf '%02i', 0 + $cost;
+
+  return $cost;
 }
 
 1;
