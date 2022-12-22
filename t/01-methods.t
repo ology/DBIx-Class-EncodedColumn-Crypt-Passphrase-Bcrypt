@@ -38,7 +38,6 @@ ok $result->bcrypt_1_check('test2'), 'encode_check pass';
 ok $result->bcrypt_2_check('test2'), 'encode_check pass';
 
 $result->bcrypt_1(encode_utf8('官话'));
-$result->update;
 ok $result->bcrypt_1_check('官话'), 'encode_check pass';
 
 $result->bcrypt_1(undef);
