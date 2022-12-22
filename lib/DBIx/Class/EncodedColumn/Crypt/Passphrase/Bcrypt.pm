@@ -95,19 +95,19 @@ hash function. Defaults to C<8>.
 
 =head2 make_encode_sub
 
-  my $result = $c->schema->resultset('Account')
-    ->create({ user => $user, password => $pass });
-
 Return a coderef that accepts a plain text value and returns an encoded value.
 This routine is used internally, to encrypt a given plain text password.
 
-=head2 make_check_sub
+  my $result = $c->schema->resultset('Account')
+    ->create({ user => $user, password => $pass });
 
-  $result->check_password($pass);
+=head2 make_check_sub
 
 Return a coderef that, when given a resultset object and a plain text value, will
 return a boolean if the plain text matches the encoded value. This is typically
 used for password authentication.
+
+  $result->check_password($pass);
 
 =head1 SEE ALSO
 
