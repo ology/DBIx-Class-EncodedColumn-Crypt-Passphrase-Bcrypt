@@ -102,7 +102,7 @@ Default: C<8>
 Return a coderef that accepts a plain text value and returns an encoded value.
 This routine is used internally, to encrypt a given plain text password.
 
-  my $result = $self->schema->resultset('Account')
+  $result = $self->schema->resultset('Account')
     ->create({ user => $user, password => $pass });
 
 =head2 make_check_sub
