@@ -1,6 +1,8 @@
 Revision history for DBIx-Class-EncodedColumn-Crypt-Passphrase-Bcrypt
 
 {{$NEXT}}
+
+0.0106 2022-12-22 19:44:32
     - Require EncodedColumn too!
 
 0.0105 2022-12-22 18:55:32
