@@ -16,7 +16,9 @@ sub make_encode_sub {
   my $cost = _get_cost($args->{cost});
 
   my $passphrase = Crypt::Passphrase::Bcrypt->new(
-    cost => $cost,
+    cost    => $cost,
+    hash    => $args->{hash} || 'sha256',
+    subtype => $args->{subtype},
   );
 
   return sub {
@@ -31,7 +33,9 @@ sub make_check_sub {
   my $cost = _get_cost($args->{cost});
 
   my $passphrase = Crypt::Passphrase::Bcrypt->new(
-    cost => $cost,
+    cost    => $cost,
+    hash    => $args->{hash} || 'sha256',
+    subtype => $args->{subtype},
   );
 
   return sub {
