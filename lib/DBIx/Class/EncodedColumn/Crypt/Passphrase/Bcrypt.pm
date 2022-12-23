@@ -19,12 +19,10 @@ sub make_encode_sub {
     cost => $cost,
   );
 
-  my $encoder = sub {
+  return sub {
     my ($plain_text) = @_;
     return $passphrase->hash_password($plain_text);
   };
-
-  return $encoder;
 }
 
 sub make_check_sub {
@@ -40,7 +38,7 @@ sub make_check_sub {
     my $col_v = $_[0]->get_column($col);
     return unless defined $col_v;
     return $passphrase->verify_password(encode_utf8($_[1]), $col_v);
-  }
+  };
 }
 
 sub _get_cost {
