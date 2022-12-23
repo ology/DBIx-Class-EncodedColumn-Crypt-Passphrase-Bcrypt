@@ -2,6 +2,7 @@ Revision history for DBIx-Class-EncodedColumn-Crypt-Passphrase-Bcrypt
 
 {{$NEXT}}
     - Improve documentation.
+    - Pass all encode args that Crypt::Passphrase::Bcrypt accepts.
 
 0.0106 2022-12-22 19:44:32
     - Require EncodedColumn too!
