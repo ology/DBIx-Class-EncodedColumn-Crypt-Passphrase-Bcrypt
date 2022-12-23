@@ -109,7 +109,7 @@ Return a coderef that, when given a resultset object and a plain text value, wil
 return a boolean if the plain text matches the encoded value. This is typically
 used for password authentication.
 
-  $result->check_password($pass);
+  $authed = $result->check_password($pass);
 
 =head1 SEE ALSO
 
