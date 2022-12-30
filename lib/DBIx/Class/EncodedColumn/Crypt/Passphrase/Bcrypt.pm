@@ -5,7 +5,7 @@ package DBIx::Class::EncodedColumn::Crypt::Passphrase::Bcrypt;
 use strict;
 use warnings;
 
-our $VERSION = '0.0109';
+our $VERSION = '0.0110';
 
 use Encode qw(encode_utf8);
 use Crypt::Passphrase::Bcrypt ();
