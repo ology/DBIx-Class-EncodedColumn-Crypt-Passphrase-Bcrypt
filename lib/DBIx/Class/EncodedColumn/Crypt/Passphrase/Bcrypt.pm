@@ -1,11 +1,11 @@
 package DBIx::Class::EncodedColumn::Crypt::Passphrase::Bcrypt;
 
-# ABSTRACT: Crypt::Passphrase::Bcrypt backend
+# ABSTRACT: Crypt::Passphrase::Bcrypt backend - DEPRECATED
 
 use strict;
 use warnings;
 
-our $VERSION = '0.0110';
+our $VERSION = '0.0110_1';
 
 use Encode qw(encode_utf8);
 use Crypt::Passphrase::Bcrypt ();
@@ -85,6 +85,8 @@ __END__;
     if $result && $result->check_password($pass);
 
 =head1 DESCRIPTION
+
+* DEPRECATED *
 
 Use L<Crypt::Passphrase::Bcrypt> for an encoded password column.
 
